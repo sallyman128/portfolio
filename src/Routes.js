@@ -6,7 +6,7 @@ import Home from "./components/Home/Home"
 import About from "./components/About/About"
 import Contact from "./components/Contact/Contact"
 
-const RoutePaths = () => {
+const Routes = () => {
   return (
     <Router>
       <Switch>
@@ -19,4 +19,4 @@ const RoutePaths = () => {
   )
 }
 
-export default RoutePaths
+export default Routes

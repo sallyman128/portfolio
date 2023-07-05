@@ -1,11 +1,11 @@
 import './App.css';
 import React from 'react';
-import RoutePaths from './RoutePaths';
+import Routes from './Routes';
 
 const App = () => {
   return (
     <div>
-      <RoutePaths />
+      <Routes />
     </div>
   );
 
