@@ -1,10 +1,10 @@
 import React from "react"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
-import Layout from "./components/Layout/index"
-import Home from "./components/Home/index"
-import About from "./components/About/index"
-import Contact from "./components/Contact/index"
+import Layout from "./components/Layout/Layout"
+import Home from "./components/Home/Home"
+import About from "./components/About/About"
+import Contact from "./components/Contact/Contact"
 
 const RoutePaths = () => {
   return (
