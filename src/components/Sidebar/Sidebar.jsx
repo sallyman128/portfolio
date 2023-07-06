@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import "./Sidebar.css"
 
 import {
-    FaHome,
     FaBars,
     FaUserAlt,
     FaRegChartBar,
@@ -16,7 +15,7 @@ import { NavLink } from 'react-router-dom';
 const Sidebar = ({children}) => {
 
     const[isOpen ,setIsOpen] = useState(true);
-    const [activeLink, setActiveLink] = useState('about');
+    const [activeLink, setActiveLink] = useState(window.location.pathname.toString());
     
     const toggle = () => setIsOpen (!isOpen);
 
@@ -24,24 +23,26 @@ const Sidebar = ({children}) => {
       setActiveLink(link);
     };
 
-    const menuItem =  [
+    const handleExternalLinkClick = (e) => {
+        e.preventDefault();
+        window.open(e.target.href, '_blank');
+      };
+
+    const menuItems =  [
         {
             path:"/",
             name:"About",
             icon:<FaUserAlt/>,
-            activeId: "about"
         },
         {
             path:"/dashboard",
             name:"Dashboard",
             icon:<FaRegChartBar/>,
-            activeId: "dashboard"
         },
         {
             path: "/projects",
             name:"Projects",
             icon: <FaCode/>,
-            activeId: "projects"
         }
     ]
 
@@ -55,20 +56,20 @@ const Sidebar = ({children}) => {
                    </div>
                 </div>
                {
-                   menuItem.map((item, index)=>(
-                       <NavLink to={item.path} key={index} className={`link ${activeLink === item.activeId ? 'active' : '' }`} 
-                            onClick={() => handleLinkClick(item.activeId)}>
+                   menuItems.map((item, index)=>(
+                       <NavLink to={item.path} key={index} className={`link ${activeLink === item.path ? 'active' : '' }`} 
+                            onClick={() => handleLinkClick(item.path)}>
                            <div className="icon">{item.icon}</div>
                            <div style={{display: isOpen ? "block" : "none"}} className="link_text">{item.name}</div>
                        </NavLink>
                    ))
                }
                <footer className='bottom_section'>
-                    <a href="https://www.linkedin.com/in/salmaan-ali/" className='link'>
+                    <a href="https://www.linkedin.com/in/salmaan-ali/" className='link' onClick={handleExternalLinkClick}>
                         <div className='icon'><FaLinkedin/></div>
                         <div style={{display: isOpen ? "block" : "none"}} className="link_text">LinkedIn</div>
                     </a>
-                    <a href="https://github.com/sallyman128" className='link'>
+                    <a href="https://github.com/sallyman128" className='link' onClick={handleExternalLinkClick}>
                         <div className='icon'><FaGithub/></div>
                         <div style={{display: isOpen ? "block" : "none"}} className="link_text">Github</div>
                     </a>
