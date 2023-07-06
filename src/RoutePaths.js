@@ -1,10 +1,10 @@
 import React from "react"
 import { Route, Routes } from "react-router-dom"
 
-import Home from "./components/Home/Home"
-import About from "./components/About/About"
-import Dashboard from "./components/Dashboard/Dashboard"
-import Error from "./components/Error/Error"
+import Home from "./pages/Home/Home"
+import About from "./pages/About/About"
+import Dashboard from "./pages/Dashboard/Dashboard"
+import Error from "./pages/Error/Error"
 
 const RoutePaths = () => {
   return (

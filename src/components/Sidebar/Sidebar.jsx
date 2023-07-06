@@ -7,7 +7,8 @@ import {
     FaRegChartBar,
     FaLinkedin,
     FaGithub,
-}from "react-icons/fa";
+    FaCode,
+} from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
 
 const Sidebar = ({children}) => {
@@ -30,6 +31,11 @@ const Sidebar = ({children}) => {
             path:"/dashboard",
             name:"Dashboard",
             icon:<FaRegChartBar/>
+        },
+        {
+            path: "/projects",
+            name:"Projects",
+            icon: <FaCode/>
         }
     ]
 
