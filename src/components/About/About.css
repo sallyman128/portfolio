@@ -1,6 +1,7 @@
-#about {
-  color: red;
-  background-color: yellow;
-  background: red;
-  text-align: center;
+p {
+  /* color: red;
+  background-color: yellow; */
+  /* background: red; */
+  position: relative;
+  text-decoration-color: red;
 }

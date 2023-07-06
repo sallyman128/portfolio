@@ -1,17 +1,18 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import { BrowserRouter } from "react-router-dom"
 
-import Routes from './Routes';
+import RoutePaths from './RoutePaths';
 import Sidebar from "./components/Sidebar/Sidebar"
 
 import './App.css';
 
 const App = () => {
   return (
-    <Router>
-      <Sidebar />
-      <Routes />
-    </Router>
+    <BrowserRouter>
+      <Sidebar>
+        <RoutePaths />
+      </Sidebar>
+    </BrowserRouter>
   );
 
 }
