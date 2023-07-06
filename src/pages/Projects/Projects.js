@@ -1,9 +1,7 @@
 import React from "react";
 import "./Projects.css"
-import Card from "../../components/Card/Card";
 import giraffe from  "../../assets/giraffe.jpg"
-import Table from "../../components/Table/Table";
-
+import CardTable from "../../components/CardTable/CardTable";
 
 const Projects = () => {
 
@@ -33,7 +31,7 @@ const Projects = () => {
   return (
     <div>
       <h1>Projects</h1>
-      <Table elements={projects} />
+      <CardTable elements={projects} />
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from '../Card/Card';
 
-const Table = ({ elements }) => {
+const CardTable = ({ elements }) => {
   // Calculate the number of rows needed
   const numRows = Math.ceil(elements.length / 3);
 
@@ -31,4 +31,4 @@ const Table = ({ elements }) => {
   );
 };
 
-export default Table;
+export default CardTable;
