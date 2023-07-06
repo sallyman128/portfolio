@@ -19,11 +19,6 @@ const Sidebar = ({children}) => {
     const menuItem =  [
         {
             path:"/",
-            name:"Home",
-            icon:<FaHome/>
-        },
-        {
-            path:"/about",
             name:"About",
             icon:<FaUserAlt/>
         },
