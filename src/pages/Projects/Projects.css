@@ -1,7 +1,6 @@
-p {
+td {
   /* color: red;
   background-color: yellow; */
   /* background: red; */
-  position: relative;
-  text-decoration-color: red;
+  padding: 10px;
 }
