@@ -5,6 +5,8 @@ import {
     FaBars,
     FaUserAlt,
     FaRegChartBar,
+    FaLinkedin,
+    FaGithub,
 }from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
 
@@ -39,7 +41,7 @@ const Sidebar = ({children}) => {
                    <div style={{marginLeft: isOpen ? "50px" : "0px"}} className="bars">
                        <FaBars onClick={toggle}/>
                    </div>
-               </div>
+                </div>
                {
                    menuItem.map((item, index)=>(
                        <NavLink to={item.path} key={index} className="link" >
@@ -48,6 +50,10 @@ const Sidebar = ({children}) => {
                        </NavLink>
                    ))
                }
+               <div className='bottom_section'>
+                    <a href="https://www.linkedin.com/in/salmaan-ali/" ><FaLinkedin/></a>
+                    <a href="https://github.com/sallyman128" ><FaGithub/></a>
+               </div>
            </div>
            <main>{children}</main>
         </div>
