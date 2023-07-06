@@ -1,12 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import './Error.css'
+import './Error.css';
+import giraffe from  "../../assets/giraffe.jpg"
 
 const Error = () => {
   return (
-    <div id='errorMessage'>
+    <div id='error_message'>
       <h1>404 Error Page</h1>
-      <h2>This route does not exist. Return <Link to='/'>Home</Link></h2>
+      <h2>This route does not exist.</h2>
+      <img alt="cute giraffe" className="error_image" src={giraffe} />
     </div>
   )
 }
