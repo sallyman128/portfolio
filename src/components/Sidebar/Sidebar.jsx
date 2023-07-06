@@ -16,23 +16,32 @@ import { NavLink } from 'react-router-dom';
 const Sidebar = ({children}) => {
 
     const[isOpen ,setIsOpen] = useState(true);
+    const [activeLink, setActiveLink] = useState('about');
+    
     const toggle = () => setIsOpen (!isOpen);
+
+    const handleLinkClick = (link) => {
+      setActiveLink(link);
+    };
 
     const menuItem =  [
         {
             path:"/",
             name:"About",
-            icon:<FaUserAlt/>
+            icon:<FaUserAlt/>,
+            activeId: "about"
         },
         {
             path:"/dashboard",
             name:"Dashboard",
-            icon:<FaRegChartBar/>
+            icon:<FaRegChartBar/>,
+            activeId: "dashboard"
         },
         {
             path: "/projects",
             name:"Projects",
-            icon: <FaCode/>
+            icon: <FaCode/>,
+            activeId: "projects"
         }
     ]
 
@@ -47,7 +56,8 @@ const Sidebar = ({children}) => {
                 </div>
                {
                    menuItem.map((item, index)=>(
-                       <NavLink to={item.path} key={index} className="link" >
+                       <NavLink to={item.path} key={index} className={`link ${activeLink === item.activeId ? 'active' : '' }`} 
+                            onClick={() => handleLinkClick(item.activeId)}>
                            <div className="icon">{item.icon}</div>
                            <div style={{display: isOpen ? "block" : "none"}} className="link_text">{item.name}</div>
                        </NavLink>
