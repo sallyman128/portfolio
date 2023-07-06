@@ -37,7 +37,7 @@ const Sidebar = ({children}) => {
         <div className="container">
            <div style={{width: isOpen ? "200px" : "50px"}} className="sidebar">
                <div className="top_section">
-                   <h1 style={{display: isOpen ? "block" : "none"}} className="logo">Logo</h1>
+                   <h1 style={{display: isOpen ? "block" : "none"}} className="logo">Portfolio</h1>
                    <div style={{marginLeft: isOpen ? "50px" : "0px"}} className="bars">
                        <FaBars onClick={toggle}/>
                    </div>
@@ -50,10 +50,16 @@ const Sidebar = ({children}) => {
                        </NavLink>
                    ))
                }
-               <div className='bottom_section'>
-                    <a href="https://www.linkedin.com/in/salmaan-ali/" ><FaLinkedin/></a>
-                    <a href="https://github.com/sallyman128" ><FaGithub/></a>
-               </div>
+               <footer className='bottom_section'>
+                    <a href="https://www.linkedin.com/in/salmaan-ali/" className='link'>
+                        <div className='icon'><FaLinkedin/></div>
+                        <div style={{display: isOpen ? "block" : "none"}} className="link_text">LinkedIn</div>
+                    </a>
+                    <a href="https://github.com/sallyman128" className='link'>
+                        <div className='icon'><FaGithub/></div>
+                        <div style={{display: isOpen ? "block" : "none"}} className="link_text">Github</div>
+                    </a>
+               </footer>
            </div>
            <main>{children}</main>
         </div>
