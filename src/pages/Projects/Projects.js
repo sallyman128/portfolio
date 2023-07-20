@@ -1,14 +1,16 @@
 import React from "react";
 import "./Projects.css"
 import giraffe from  "../../assets/giraffe.jpg"
+import lmsLogo from  "../../assets/lms_logo.png"
 import CardTable from "../../components/CardTable/CardTable";
 
 const Projects = () => {
 
   const projects = [
     {
-      imageSrc: giraffe,
-      description: "fdafda"
+      imageSrc: lmsLogo,
+      description: "Learning Management Software",
+      githubLink: "https://github.com/sallyman128/final_project_lms/"
     },
     {
       imageSrc: giraffe,
