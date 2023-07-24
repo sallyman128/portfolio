@@ -14,19 +14,19 @@ const Projects = () => {
     },
     {
       imageSrc: giraffe,
-      description: "fdafda"
+      description: "Future project"
     },
     {
       imageSrc: giraffe,
-      description: "fdafda"
+      description: "Future project"
     },
     {
       imageSrc: giraffe,
-      description: "fdafda"
+      description: "Future project"
     },
     {
       imageSrc: giraffe,
-      description: "fdafda"
+      description: "Future project"
     }
   ]
 
