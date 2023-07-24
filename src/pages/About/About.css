@@ -1,7 +1,16 @@
-p {
-  /* color: red;
-  background-color: yellow; */
-  /* background: red; */
+h2 {
+  margin-bottom: 3pt;
+}
+
+.email-link {
+  padding: 5pt;
+  color: #000;
+}
+
+.skill-list {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 4;
+  margin-left: 10pt;
   position: relative;
-  text-decoration-color: red;
 }

@@ -1,11 +1,7 @@
 import React from "react";
-import ModalPopUp from "../../components/Modal/Modal";
+import "./About.css"
 
 const About = () => {
-  const openModal = () => {
-    return <ModalPopUp />
-  }
-
   return (
     <div>
       <header>
@@ -23,28 +19,30 @@ const About = () => {
         <br/>
         <section className="skills-section">
           <h2>Skills</h2>
-          <ul>
+          <ul className="skill-list">
             <li>HTML5</li>
             <li>CSS3</li>
             <li>JavaScript (ES6+)</li>
             <li>ReactJs</li>
             <li>Java Springboot</li>
             <li>Ruby on Rails</li>
-            <li>Full stack web development</li>
+            <li>Web development</li>
             <li>SQL</li>
-            <li>Kafka Asyncheronous Messaging</li>
+            <li>Kafka Asynchronous Messaging</li>
             <li>RESTful API</li>
+            <li>Microservice Architecture</li>
           </ul>
         </section>
         <br/>
         <section className="contact-section">
           <h2>Contact Me</h2>
           <p>
-            If you're interested in working together or have any questions, feel free to reach out
-            to me.
+            If you're interested in working together or have any questions, feel free to reach out to me.
           </p>
           <br/>
-          <button className="button" onClick={() => openModal}>Get in Touch</button>
+          <button class="email-button">
+            <a class="email-link" href = "mailto: salmaan.arif.ali@gmail.com">Send Email</a>
+          </button>  
         </section>
       </main>
     </div>
