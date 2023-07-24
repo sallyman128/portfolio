@@ -2,6 +2,7 @@ import React from "react";
 import "./Projects.css"
 import giraffe from  "../../assets/giraffe.jpg"
 import lmsLogo from  "../../assets/lms_logo.png"
+import jottaNote from "../../assets/jottanote.png"
 import CardTable from "../../components/CardTable/CardTable";
 
 const Projects = () => {
@@ -13,8 +14,9 @@ const Projects = () => {
       githubLink: "https://github.com/sallyman128/final_project_lms/"
     },
     {
-      imageSrc: giraffe,
-      description: "Future project"
+      imageSrc: jottaNote,
+      description: "Note Taking App",
+      githubLink: "https://github.com/sallyman128/mod4-final-project"
     },
     {
       imageSrc: giraffe,
