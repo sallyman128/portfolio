@@ -7,28 +7,33 @@ import CardTable from "../../components/CardTable/CardTable";
 
 const Projects = () => {
 
+  const rootUrl = window.location.origin
+
   const projects = [
     {
       imageSrc: lmsLogo,
       description: "Learning Management Software",
-      githubLink: "https://github.com/sallyman128/final_project_lms/"
+      link: "https://github.com/sallyman128/final_project_lms/"
     },
     {
       imageSrc: jottaNote,
       description: "Note Taking App",
-      githubLink: "https://github.com/sallyman128/mod4-final-project"
+      link: "https://github.com/sallyman128/mod4-final-project"
     },
     {
       imageSrc: giraffe,
-      description: "Future project"
+      description: "Weather",
+      link: `${rootUrl}/weather`
     },
     {
       imageSrc: giraffe,
-      description: "Future project"
+      description: "Future project",
+      link: `${rootUrl}`
     },
     {
       imageSrc: giraffe,
-      description: "Future project"
+      description: "Future project",
+      link: `${rootUrl}`
     }
   ]
 

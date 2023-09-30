@@ -12,6 +12,7 @@ const RoutePaths = () => {
       <Route exact path="/" element={<About/>} />
       <Route path="/dashboard" element={<Dashboard/>} />
       <Route path="/projects" element={<Projects/>} />
+      <Route path="/weather" element="Weather"/>
       <Route path="*" element={<Error/>} />
     </Routes>
   )
