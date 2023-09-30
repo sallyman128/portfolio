@@ -8,10 +8,15 @@ const WeatherApp = () => {
         setLocation(e.target.value)
     }
 
-    const getWeather = () => {
+    const getWeather = async() => {
         //fetch weather from api given the city
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${}`)
-        setWeather("fetched weather")
+        const latitude = 52.52
+        const longitude = 13.41
+        const temperature_unit = "fahrenheit"
+        const resp = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&temperature_unit=${temperature_unit}`)
+        const json = await resp.json()
+        setWeather(json)
+        // setWeather("fetched weather")
         setLocation("")
     }
 
@@ -38,7 +43,7 @@ const WeatherApp = () => {
             </fieldset>
             <button onClick={getWeather}>Get Weather</button>
             <div>
-                {weather ? `${location}` : ""}
+                {weather ? `${weather}` : ""}
             </div>
         </div>
     )
