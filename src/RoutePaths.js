@@ -5,6 +5,7 @@ import About from "./pages/About/About"
 import Dashboard from "./pages/Dashboard/Dashboard"
 import Error from "./pages/Error/Error"
 import Projects from "./pages/Projects/Projects"
+import WeatherApp from "./pages/WeatherApp/WeatherApp"
 
 const RoutePaths = () => {
   return (
@@ -12,7 +13,7 @@ const RoutePaths = () => {
       <Route exact path="/" element={<About/>} />
       <Route path="/dashboard" element={<Dashboard/>} />
       <Route path="/projects" element={<Projects/>} />
-      <Route path="/weather" element="Weather"/>
+      <Route path="/weather" element={<WeatherApp />} />
       <Route path="*" element={<Error/>} />
     </Routes>
   )
