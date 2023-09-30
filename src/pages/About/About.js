@@ -12,8 +12,7 @@ const About = () => {
         <section className="about-section">
           <h2>About</h2>
           <p>
-          Full stack engineer experienced in developing Java Spring Boot, Ruby on Rails, and JavaScript-based applications with a background in Economics. 
-          Possess strong skills in logic, abstraction, and teamwork that help companies build robust software that is designed to drive growth and adaptability.
+            I am an enthusiastic full-stack software engineer eager to advance and excel in my career. I have experience in developing Java Spring Boot, Ruby on Rails, and React.js applications, and I have a background in Economics. I have designed and developed multiple full-stack applications, prioritizing software code for readability, adaptability, and extendability.
           </p>
         </section>
         <br/>
