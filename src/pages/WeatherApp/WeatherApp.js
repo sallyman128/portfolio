@@ -10,6 +10,7 @@ const WeatherApp = () => {
 
     const getWeather = () => {
         //fetch weather from api given the city
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${}`)
         setWeather("fetched weather")
         setLocation("")
     }
