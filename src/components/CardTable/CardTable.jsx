@@ -17,7 +17,7 @@ const CardTable = ({ elements }) => {
         <Card
           imageSrc={element.imageSrc}
           description={element.description}
-          githubLink={element.githubLink}
+          link={element.link}
         />
       </td>
     ));

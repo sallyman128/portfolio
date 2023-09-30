@@ -1,10 +1,13 @@
 import React from 'react';
 import './Card.css';
 
-const Card = ({ imageSrc, description, githubLink }) => {
+const Card = ({ imageSrc, description, link }) => {
+  const originOfPage = window.location.origin
+  const originOfCard = new URL(link).origin
+
   return (
     <div className="card">
-      <a className="github-link" href="https://github.com/sallyman128/final_project_lms/" target='_blank'>
+      <a className="card-link" href={`${link}`} target={originOfPage === originOfCard ? '' : '_blank'}>
         <img src={imageSrc} alt="card" className="card-image" />
         <div className="card-description">{description}</div>
       </a>
