@@ -16,7 +16,10 @@ const WeatherApp = () => {
         const resp = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&temperature_unit=${temperature_unit}`)
         const json = await resp.json()
         setWeather(json)
-        // setWeather("fetched weather")
+        // TODO: set weather correctly
+        // TODO: get latitude and longitude from city
+        // TODO: set state var for temp unit radio buttons
+        // TODO: autofill city with only available options
         setLocation("")
     }
 
