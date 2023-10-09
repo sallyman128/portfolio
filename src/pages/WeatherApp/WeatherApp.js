@@ -3,18 +3,34 @@ import React, { useState } from "react";
 const WeatherApp = () => {
     const [location, setLocation] = useState("")
     const [weather, setWeather] = useState()
+    const [geoLocation, setGeoLocation] = useState({
+        latitude: null,
+        longitude: null
+    })
 
     const updateLocation = (e) => {
         setLocation(e.target.value)
     }
 
+    const getGeoLocation = async () => {
+        const resp = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${location}`)
+        const json = await resp.json()
+        debugger
+        setGeoLocation(
+            {
+                latitude: json.results[0].latitude,
+                longitude: json.results[0].longitude
+            }
+        )
+    }
+
     const getWeather = async() => {
         //fetch weather from api given the city
-        const latitude = 52.52
-        const longitude = 13.41
+        await getGeoLocation()
         const temperature_unit = "fahrenheit"
-        const resp = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&temperature_unit=${temperature_unit}`)
+        const resp = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${geoLocation.latitude}&longitude=${geoLocation.longitude}&current_weather=true&temperature_unit=${temperature_unit}`)
         const json = await resp.json()
+        debugger
         setWeather(json)
         // TODO: set weather correctly
         // TODO: get latitude and longitude from city
