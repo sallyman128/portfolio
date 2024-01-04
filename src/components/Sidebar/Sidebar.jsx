@@ -9,6 +9,7 @@ import {
     FaLinkedin,
     FaGithub,
     FaCode,
+    FaPencilRuler
 } from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
 
@@ -38,6 +39,11 @@ const Sidebar = ({children}) => {
             path: "/projects",
             name:"Projects",
             icon: <FaCode/>,
+        },
+        {
+            path: "/animations",
+            name: "Animations",
+            icon: <FaPencilRuler/>
         }
     ]
 

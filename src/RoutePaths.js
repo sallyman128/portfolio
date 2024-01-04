@@ -6,6 +6,7 @@ import Dashboard from "./pages/Dashboard/Dashboard"
 import Error from "./pages/Error/Error"
 import Projects from "./pages/Projects/Projects"
 import WeatherApp from "./pages/WeatherApp/WeatherApp"
+import Animations from "./pages/Animations/Animations"
 
 const RoutePaths = () => {
   return (
@@ -14,6 +15,7 @@ const RoutePaths = () => {
       <Route path="/dashboard" element={<Dashboard/>} />
       <Route path="/projects" element={<Projects/>} />
       <Route path="/weather" element={<WeatherApp />} />
+      <Route path="/animations" element={<Animations />} />
       <Route path="*" element={<Error/>} />
     </Routes>
   )
