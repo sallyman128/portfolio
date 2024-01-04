@@ -5,10 +5,19 @@ import SimpleAnimationContainer from "./SimpleAnimationContainer/SimpleAnimation
 import ComplexAnimationContainer from "./ComplexAnimationContainer/ComplexAnimationContainer";
 
 const Animations = () => {
-    return <>
-        <SimpleAnimationContainer />
-        <ComplexAnimationContainer />
-    </>
+    return <div>
+        <h1>Ball Animations</h1>
+        <div>
+            <h2>Simple</h2>
+            <SimpleAnimationContainer />
+        </div>
+        <br/>
+        <br/>
+        <div>
+            <h2>Complex</h2>
+            <ComplexAnimationContainer />
+        </div>
+    </div>
     
 }
 

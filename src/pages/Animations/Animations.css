@@ -35,3 +35,9 @@
     border-radius: 50%;
     background: blue;
 }
+
+.submit-button {
+    background-color: lightgreen;
+    font-size: large;
+    width: 100px
+}

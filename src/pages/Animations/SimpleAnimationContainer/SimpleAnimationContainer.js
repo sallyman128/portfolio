@@ -7,14 +7,14 @@ const SimpleAnimationContainer = () => {
 
   useEffect(() => {
     const animationInterval = setInterval(() => {
-      const newPosition = position + direction * 5;
+      const newPosition = position + direction;
 
-      if (newPosition <= 0 || newPosition >= 200) {
+      if (newPosition <= 0 || newPosition >= 180) {
         setDirection(direction * -1);
       } else {
         setPosition(newPosition);
       }
-    }, 100);
+    }, 10);
 
     return () => clearInterval(animationInterval);
   }, [position, direction]);
