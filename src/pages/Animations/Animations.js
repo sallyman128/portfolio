@@ -1,9 +1,15 @@
 import React from "react";
+import './Animations.css'
 
-import AnimationContainer from "./AnimationContainer/AnimationContainer";
+import SimpleAnimationContainer from "./SimpleAnimationContainer/SimpleAnimationContainer";
+import ComplexAnimationContainer from "./ComplexAnimationContainer/ComplexAnimationContainer";
 
 const Animations = () => {
-    return <AnimationContainer />
+    return <>
+        <SimpleAnimationContainer />
+        <ComplexAnimationContainer />
+    </>
+    
 }
 
 export default Animations

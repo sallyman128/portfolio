@@ -7,7 +7,7 @@ const Card = ({ imageSrc, description, link }) => {
 
   return (
     <div className="card">
-      <a className="card-link" href={`${link}`} target={originOfPage === originOfCard ? '' : '_blank'}>
+      <a className="card-link" href={`${link}`} target={originOfPage === originOfCard ? '' : '_blank'} rel="noreferrer">
         <img src={imageSrc} alt="card" className="card-image" />
         <div className="card-description">{description}</div>
       </a>
