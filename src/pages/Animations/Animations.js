@@ -1,7 +1,9 @@
 import React from "react";
 
+import AnimationContainer from "./AnimationContainer/AnimationContainer";
+
 const Animations = () => {
-    return <h1>Animations</h1>
+    return <AnimationContainer />
 }
 
 export default Animations
