@@ -66,11 +66,11 @@ const Sidebar = ({children}) => {
                    ))
                }
                <footer className='bottom_section'>
-                    <a href="https://www.linkedin.com/in/salmaan-ali/" className='link' target='_blank'>
+                    <a href="https://www.linkedin.com/in/salmaan-ali/" className='link' target='_blank' rel="noreferrer">
                         <div className='icon'><FaLinkedin/></div>
                         <div style={{display: isOpen ? "block" : "none"}} className="link_text">LinkedIn</div>
                     </a>
-                    <a href="https://github.com/sallyman128" className='link' target='_blank'>
+                    <a href="https://github.com/sallyman128" className='link' target='_blank' rel="noreferrer">
                         <div className='icon'><FaGithub/></div>
                         <div style={{display: isOpen ? "block" : "none"}} className="link_text">Github</div>
                     </a>
