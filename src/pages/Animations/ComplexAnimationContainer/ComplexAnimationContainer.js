@@ -1,16 +1,68 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import "../Animations.css"
 
 const ComplexAnimationContainer = () => {
-    const [angleValue, setAngleValue ]= useState(45)
+    const [angleValue, setAngleValue ] = useState(45)
+    const [ballSpeed, setBallSpeed] = useState("normal")
+    const [launchedBall, setLaunchedBall] = useState(false)
+    const [position, setPosition] = useState({
+        vertical: 0,
+        horizontal: 0,
+        vDirection: 1,
+        hDirection: 1
+    })
+
+    const top = 0
+    const left = 0
+    const bottom = 180
+    const right = 180
 
     const handleAngleChange = (e) => {
         setAngleValue(e.target.value)
     }
 
+    const handleBallSpeedChange = (e) => {
+        setBallSpeed(e.target.value)
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault()
+        launchBall()
     }
+
+    const launchBall = () => {
+        setLaunchedBall(true)
+        setPosition(prevState => ({
+            ...prevState,
+            vertical: prevState.vertical + 1,
+            horizontal: prevState.horizontal + 1
+        }))
+    }
+
+    useEffect(() => {
+        if (launchedBall) {
+            const animationInterval = setInterval(() => {
+                const newPosition = {
+                    vertical: position.vertical + 1,
+                    horizontal: position.horizontal + 1,
+                    vDirection: position.vDirection,
+                    hDirection: position.hDirection
+                }
+    
+                if (newPosition.vertical <= top || newPosition.vertical >= bottom) {
+                    newPosition.vDirection *= -1
+                }
+
+                if (newPosition.horizontal <= left || newPosition.horizontal >= right) {
+                    newPosition.hDirection *= -1
+                }
+
+                setPosition(newPosition)
+                }, 10);
+    
+                return () => clearInterval(animationInterval);
+        }
+    }, [position, launchedBall])
 
     return (
         <div>
@@ -25,25 +77,25 @@ const ComplexAnimationContainer = () => {
                         <h3>Select ball speed: </h3>
                         <div>
                             <div>
-                                <input type="radio" id="slow" name="ball-speed" value="slow"/>
-                                <label for="slow">Slow</label>
+                                <input type="radio" id="slow" name="ball-speed" value="slow" checked={ballSpeed==="slow"} onChange={handleBallSpeedChange}/>
+                                <label htmlFor="slow">Slow</label>
                             </div>
                             <div>
-                                <input type="radio" id="normal" name="ball-speed" value="normal" checked/>
-                                <label for="normal">Normal</label>
+                                <input type="radio" id="normal" name="ball-speed" value="normal" checked={ballSpeed==="normal"} onChange={handleBallSpeedChange}/>
+                                <label htmlFor="normal">Normal</label>
                             </div>
                             <div>
-                                <input type="radio" id="fast" name="ball-speed" value="fast" />
-                                <label for="fast">Fast</label>
+                                <input type="radio" id="fast" name="ball-speed" value="fast" checked={ballSpeed==="fast"} onChange={handleBallSpeedChange}/>
+                                <label htmlFor="fast">Fast</label>
                             </div>
                         </div>
                     </div>
                     <button className="submit-button" onClick={handleSubmit}>Go</button>
                 </fieldset>
             </form>
-            <br/><br/>
+            <br/>
             <div className="complex-box">
-                Hello
+                <div className="complex-ball" style={{ top: `${position.vertical}px`, left: `{${position.horizontal}px}` }}></div>
             </div>
         </div>
     )
