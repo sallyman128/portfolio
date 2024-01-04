@@ -2,14 +2,12 @@ import React, {useEffect, useState} from 'react'
 import "../Animations.css"
 
 const ComplexAnimationContainer = () => {
-    const [angleValue, setAngleValue ] = useState(45)
-    const [ballSpeed, setBallSpeed] = useState("normal")
-    const [launchedBall, setLaunchedBall] = useState(false)
+    const [angle, setAngle] = useState(45)
+    const [speed, setSpeed] = useState(1)
+    const [isAnimating, setIsAnimating] = useState(false)
     const [position, setPosition] = useState({
-        vertical: 0,
-        horizontal: 0,
-        vDirection: 1,
-        hDirection: 1
+        x: 0,
+        y: 0,
     })
 
     const top = 0
@@ -18,11 +16,23 @@ const ComplexAnimationContainer = () => {
     const right = 180
 
     const handleAngleChange = (e) => {
-        setAngleValue(e.target.value)
+        setAngle(e.target.value)
     }
 
-    const handleBallSpeedChange = (e) => {
-        setBallSpeed(e.target.value)
+    const handleSpeedChange = (e) => {
+        switch(e.target.value) {
+            case 'slow':
+                setSpeed(0.5)
+                break
+            case 'normal':
+                setSpeed(1)
+                break
+            case 'fast':
+                setSpeed(2)
+                break
+            default:
+                console.log(`${e.target.value} option does not exist.`)
+        }
     }
 
     const handleSubmit = (e) => {
@@ -31,38 +41,27 @@ const ComplexAnimationContainer = () => {
     }
 
     const launchBall = () => {
-        setLaunchedBall(true)
-        setPosition(prevState => ({
-            ...prevState,
-            vertical: prevState.vertical + 1,
-            horizontal: prevState.horizontal + 1
-        }))
+        setIsAnimating(true)
     }
 
     useEffect(() => {
-        if (launchedBall) {
-            const animationInterval = setInterval(() => {
-                const newPosition = {
-                    vertical: position.vertical + 1,
-                    horizontal: position.horizontal + 1,
-                    vDirection: position.vDirection,
-                    hDirection: position.hDirection
-                }
-    
-                if (newPosition.vertical <= top || newPosition.vertical >= bottom) {
-                    newPosition.vDirection *= -1
-                }
+        let interval;
 
-                if (newPosition.horizontal <= left || newPosition.horizontal >= right) {
-                    newPosition.hDirection *= -1
-                }
+        if (isAnimating) {
+            const radians = (angle * Math.PI) / 180
+            const deltaX = Math.cos(radians) * speed;
+            const deltaY = Math.sin(radians) * speed;
 
-                setPosition(newPosition)
-                }, 10);
-    
-                return () => clearInterval(animationInterval);
+            interval = setInterval(()=> {
+                setPosition((prevPos) => ({
+                    x: prevPos.x + deltaX,
+                    y: prevPos.y + deltaY
+                }))
+            }, 100 / speed)
         }
-    }, [position, launchedBall])
+
+        return () => clearInterval(interval)
+    }, [isAnimating, angle, speed])
 
     return (
         <div>
@@ -70,22 +69,22 @@ const ComplexAnimationContainer = () => {
                 <fieldset style={{display: "inline", padding: "5px"}}>
                     <legend>Configurations</legend>
                     <div>
-                        <h3>Starting Angle: {angleValue}&deg;</h3>
-                        <input type="range" id="angle" name="angle" min="0" max="90" value={angleValue} onChange={handleAngleChange}/>
+                        <h3>Starting Angle: {angle}&deg;</h3>
+                        <input type="range" id="angle" name="angle" min="0" max="90" value={angle} onChange={handleAngleChange}/>
                     </div>
                     <div>
                         <h3>Select ball speed: </h3>
                         <div>
                             <div>
-                                <input type="radio" id="slow" name="ball-speed" value="slow" checked={ballSpeed==="slow"} onChange={handleBallSpeedChange}/>
+                                <input type="radio" id="slow" name="ball-speed" value="slow" checked={speed===0.5} onChange={handleSpeedChange}/>
                                 <label htmlFor="slow">Slow</label>
                             </div>
                             <div>
-                                <input type="radio" id="normal" name="ball-speed" value="normal" checked={ballSpeed==="normal"} onChange={handleBallSpeedChange}/>
+                                <input type="radio" id="normal" name="ball-speed" value="normal" checked={speed===1} onChange={handleSpeedChange}/>
                                 <label htmlFor="normal">Normal</label>
                             </div>
                             <div>
-                                <input type="radio" id="fast" name="ball-speed" value="fast" checked={ballSpeed==="fast"} onChange={handleBallSpeedChange}/>
+                                <input type="radio" id="fast" name="ball-speed" value="fast" checked={speed===2} onChange={handleSpeedChange}/>
                                 <label htmlFor="fast">Fast</label>
                             </div>
                         </div>
@@ -95,7 +94,7 @@ const ComplexAnimationContainer = () => {
             </form>
             <br/>
             <div className="complex-box">
-                <div className="complex-ball" style={{ top: `${position.vertical}px`, left: `{${position.horizontal}px}` }}></div>
+                <div className="complex-ball" style={{ top: `${position.y}px`, left: `{${position.x}px}` }}></div>
             </div>
         </div>
     )
