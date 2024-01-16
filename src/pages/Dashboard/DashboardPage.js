@@ -6,7 +6,8 @@ const DashboardPage = () => {
     const [userData, setUserData] = useState({});
 
     useEffect ( () => {
-      getCodewarsData().then(data => setUserData(data))
+        console.info("Fetching codewars data")
+        getCodewarsData().then(data => setUserData(data))
     }, [])
 
     if (Object.keys(userData).length === 0) {

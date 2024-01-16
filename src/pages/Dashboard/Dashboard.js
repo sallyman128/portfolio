@@ -2,7 +2,6 @@ import React from 'react';
 import { Chart } from 'react-google-charts';
 
 const Dashboard = ({ userData }) => {
-  console.log(userData)
 
   const languageData = [
     ['Language', 'Score'],
@@ -13,7 +12,6 @@ const Dashboard = ({ userData }) => {
     <div>
       <h2>Welcome, {userData.name}!</h2>
 
-      <h3>Languages:</h3>
       <Chart
         width={'100%'}
         height={'300px'}
