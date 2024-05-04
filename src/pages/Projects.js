@@ -11,27 +11,27 @@ const Projects = () => {
   const projects = [
     {
       imageSrc: lmsLogo,
-      description: "Learning Management Software",
+      title: "Learning Management Software",
       link: "https://github.com/sallyman128/final_project_lms/"
     },
     {
       imageSrc: jottaNote,
-      description: "Note Taking App",
+      title: "Note Taking App",
       link: "https://github.com/sallyman128/mod4-final-project"
     },
     {
       imageSrc: giraffe,
-      description: "Weather",
+      title: "Weather",
       link: `${rootUrl}/weather`
     },
     {
       imageSrc: giraffe,
-      description: "Future project",
+      title: "Future project",
       link: `${rootUrl}`
     },
     {
       imageSrc: giraffe,
-      description: "Future project",
+      title: "Future project",
       link: `${rootUrl}`
     }
   ]
