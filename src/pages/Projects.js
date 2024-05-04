@@ -1,9 +1,8 @@
 import React from "react";
-import "./Projects.css"
-import giraffe from  "../../assets/giraffe.jpg"
-import lmsLogo from  "../../assets/lms_logo.png"
-import jottaNote from "../../assets/jottanote.png"
-import CardTable from "../../components/CardTable/CardTable";
+import giraffe from  "../assets/giraffe.jpg"
+import lmsLogo from  "../assets/lms_logo.png"
+import jottaNote from "../assets/jottanote.png"
+import CardTable from "../components/CardTable/CardTable";
 
 const Projects = () => {
 

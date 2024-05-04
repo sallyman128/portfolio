@@ -9,9 +9,8 @@ import './App.css';
 const App = () => {
   return (
     <BrowserRouter>
-      <NavBarContainer>
-        <RoutePaths />
-      </NavBarContainer>
+      <NavBarContainer />
+      <RoutePaths />
     </BrowserRouter>
   );
 

@@ -1,6 +1,5 @@
 import React from "react";
-import './Error.css';
-import giraffe from  "../../assets/giraffe.jpg"
+import giraffe from  "../assets/giraffe.jpg"
 
 const Error = () => {
   return (

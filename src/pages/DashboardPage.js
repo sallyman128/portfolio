@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import Dashboard from "./Dashboard";
-import { getCodewarsData } from "../../api/fetchCodewarsData";
+import { getCodewarsData } from "../api/fetchCodewarsData";
 
 const DashboardPage = () => {
     const [userData, setUserData] = useState({});

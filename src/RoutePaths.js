@@ -1,11 +1,11 @@
 import React from "react"
 import { Route, Routes } from "react-router-dom"
 
-import About from "./pages/About/About"
-import DashboardPage from "./pages/Dashboard/DashboardPage"
-import Error from "./pages/Error/Error"
-import Projects from "./pages/Projects/Projects"
-import WeatherApp from "./pages/WeatherApp/WeatherApp"
+import About from "./pages/About"
+import DashboardPage from "./pages/DashboardPage"
+import Error from "./pages/Error"
+import Projects from "./pages/Projects"
+import WeatherApp from "./pages/WeatherApp"
 import Animations from "./pages/Animations/Animations"
 
 const RoutePaths = () => {
