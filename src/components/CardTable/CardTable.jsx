@@ -1,5 +1,7 @@
 import React from 'react';
-import Card from '../Card/Card';
+import Card from 'react-bootstrap/Card';
+import Image from 'react-bootstrap/Image';
+import NavLink from 'react-bootstrap/NavLink';
 
 const CardTable = ({ elements }) => {
   // Calculate the number of rows needed
@@ -13,12 +15,15 @@ const CardTable = ({ elements }) => {
 
     // Render the Card components for each row
     const cards = rowElements.map((element, idx) => (
-      <td key={idx}>
-        <Card
-          imageSrc={element.imageSrc}
-          description={element.description}
-          link={element.link}
-        />
+      <td key={idx} className="px-3 py-3">
+        <NavLink href={element.link} target="_blank" rel="noreferrer">
+          <Card style={{ width: '18rem', height: '18rem' }}>
+            <Image variant="top" src={element.imageSrc} style={{ width: '18rem', height: '10rem' }} />
+            <Card.Body>
+              <Card.Title>{element.title}</Card.Title>
+            </Card.Body>
+          </Card>
+        </NavLink>
       </td>
     ));
 
