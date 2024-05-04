@@ -3,15 +3,15 @@ import { BrowserRouter } from "react-router-dom"
 
 import RoutePaths from './RoutePaths';
 // import Sidebar from "./components/Sidebar/Sidebar"
-import NavBar from './components/NavBar';
+import NavBarContainer from './components/NavBarContainer';
 import './App.css';
 
 const App = () => {
   return (
     <BrowserRouter>
-      <NavBar>
+      <NavBarContainer>
         <RoutePaths />
-      </NavBar>
+      </NavBarContainer>
     </BrowserRouter>
   );
 
