@@ -5,12 +5,11 @@ const News = () => {
   const [prompt, setPrompt] = useState('');
   const [response, setResponse] = useState('');
 
-  const handlePromptChange = (event) => {
-    setPrompt(event.target.value);
-  };
+  const globalPrompt = "Whats the news in the world?"
 
-  const handleSubmit = async () => {
+  const handleGlobalNewsSubmit = async () => {
     try {
+      setPrompt(globalPrompt)
       const data = await fetchOpenAIResponse(prompt);
       setResponse(data.choices[0].message.content);
     } catch (error) {
@@ -19,17 +18,8 @@ const News = () => {
   };
 
   return (
-    <div className="App">
-      <h1>OpenAI Chatbot</h1>
-      <textarea
-        placeholder="Enter your prompt..."
-        value={prompt}
-        onChange={handlePromptChange}
-        rows="5"
-        cols="60"
-      />
-      <br />
-      <button onClick={handleSubmit}>Submit</button>
+    <div>
+      <button onClick={handleGlobalNewsSubmit}>Get Global News</button>
       <h2>Response:</h2>
       <p>{response}</p>
     </div>
