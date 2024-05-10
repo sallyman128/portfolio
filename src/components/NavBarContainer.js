@@ -5,7 +5,8 @@ import {
     FaLinkedin,
     FaGithub,
     FaCode,
-    FaPencilRuler
+    FaPencilRuler,
+    FaRegNewspaper
 } from "react-icons/fa";
 
 const menuItems =  [
@@ -28,6 +29,11 @@ const menuItems =  [
         path: "/animations",
         name: "Animations",
         icon: <FaPencilRuler/>
+    },
+    {
+        path: "/news",
+        name: "News",
+        icon: <FaRegNewspaper/>
     }
 ]
 

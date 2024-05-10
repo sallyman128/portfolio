@@ -7,6 +7,7 @@ import Error from "./pages/Error"
 import Projects from "./pages/Projects"
 import WeatherApp from "./pages/WeatherApp"
 import Animations from "./pages/Animations/Animations"
+import News from "./pages/News"
 
 const RoutePaths = () => {
   return (
@@ -16,6 +17,7 @@ const RoutePaths = () => {
       <Route path="/projects" element={<Projects/>} />
       <Route path="/weather" element={<WeatherApp/>} />
       <Route path="/animations" element={<Animations/>} />
+      <Route path="/news" element={<News />} />
       <Route path="*" element={<Error/>} />
     </Routes>
   )
