@@ -1,12 +1,9 @@
 import React from "react";
-import giraffe from  "../assets/giraffe.jpg"
 import lmsLogo from  "../assets/lms_logo.png"
 import jottaNote from "../assets/jottanote.png"
 import CardTable from "../components/CardTable/CardTable";
 
 const Projects = () => {
-
-  const rootUrl = window.location.origin
 
   const projects = [
     {
