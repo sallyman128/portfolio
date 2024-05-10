@@ -19,21 +19,6 @@ const Projects = () => {
       title: "Note Taking App",
       link: "https://github.com/sallyman128/mod4-final-project"
     },
-    {
-      imageSrc: giraffe,
-      title: "Weather",
-      link: `${rootUrl}/weather`
-    },
-    {
-      imageSrc: giraffe,
-      title: "Future project",
-      link: `${rootUrl}`
-    },
-    {
-      imageSrc: giraffe,
-      title: "Future project",
-      link: `${rootUrl}`
-    }
   ]
 
   return (
