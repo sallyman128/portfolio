@@ -19,6 +19,7 @@ const News = () => {
 
   return (
     <div>
+			<h1>Unbiased News</h1>
       <button onClick={handleGlobalNewsSubmit}>Get Global News</button>
       <h2>Response:</h2>
       <p>{response}</p>
