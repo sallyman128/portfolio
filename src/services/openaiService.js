@@ -12,8 +12,6 @@ const openai = axios.create({
 
 export const fetchOpenAIResponse = async (prompt, model = 'gpt-3.5-turbo') => {
   try {
-    console.log("here")
-    console.log(apiKey)
     const response = await openai.post('/chat/completions', {
       model,
       messages: [{ role: 'user', content: prompt }],
