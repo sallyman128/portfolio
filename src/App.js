@@ -2,16 +2,18 @@ import React from 'react';
 import { BrowserRouter } from "react-router-dom"
 
 import RoutePaths from './RoutePaths';
-// import Sidebar from "./components/Sidebar/Sidebar"
 import NavBarContainer from './components/NavBarContainer';
 import './App.css';
+import Wrapper from './components/Wrapper';
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <Wrapper>
       <NavBarContainer />
-      <RoutePaths />
-    </BrowserRouter>
+      <BrowserRouter>
+        <RoutePaths />
+      </BrowserRouter>
+    </Wrapper>
   );
 
 }
